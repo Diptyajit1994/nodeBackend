@@ -7,7 +7,8 @@ const log4js = require('log4js');
 const timeout = require('connect-timeout');
 
 // require all the js files from routes folder
-var apiRoute = require('./routes/index');
+var basicRoute = require('./routes/index');
+var apiRoute = require('./routes/bmi');
 
 var app = express();
 require('dotenv').config();
@@ -37,7 +38,8 @@ app.use(cookieParser());
 app.use(timeout('4s'));
 
 // paths
-app.use('/', apiRoute);
+app.use('/', basicRoute);
+app.use('/api', apiRoute);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
