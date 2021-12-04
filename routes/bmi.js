@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const logger = require('../utils/logger').logger;
-const patientInfo = require('../inputFile/patientInfo.json')
+const patientInfo = require('../inputFile/patientInfo.json');
 const bmiService = require('../service/bmiService');
 
 //get api call to fetch patient bmi details 

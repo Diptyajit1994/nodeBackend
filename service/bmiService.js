@@ -46,26 +46,24 @@ async function calculateBMICategoryHealthRisk(bmi){
             healthData.health_risk = 'Malnutrition Risk'
 		break;
         case bmi >= 18.5 && bmi <=24.9:
-            healthData.bmi_category ='Normal Weight';
-            healthData.health_risk = 'Low Risk'
+            healthData.bmi_category = 'Normal Weight';
+            healthData.health_risk = 'Low Risk';
 		break;
         case bmi >= 24.5 && bmi <=29.9:
-            console.log('bmi issss',bmi);
-            healthData.bmi_category ='Overweight';
+            healthData.bmi_category = 'Overweight';
             healthData.health_risk = 'Enhanced Risk';
-            console.log(healthData.bmi_category);
 		break;
         case bmi >= 30 && bmi <=34.9:
             healthData.bmi_category ='Moderately Obese';
-            healthData.health_risk = 'Medium Risk'
+            healthData.health_risk = 'Medium Risk';
 		break;
         case bmi >= 35 && bmi <=39.9:
-            healthData.bmi_category ='Severel Obese';
-            healthData.health_risk = 'High Risk'
+            healthData.bmi_category = 'Severel Obese';
+            healthData.health_risk = 'High Risk';
 		break;
         case bmi >= 40:
-            healthData.bmi_category ='Very Severely Obese';
-            healthData.health_risk = 'Very High Risk'
+            healthData.bmi_category = 'Very Severely Obese';
+            healthData.health_risk = 'Very High Risk';
 		break;
 
 	}
