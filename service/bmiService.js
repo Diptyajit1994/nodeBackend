@@ -1,7 +1,6 @@
 const logger = require('../utils/logger').logger;
-const patientInfo = require('../inputFile/patientInfo.json')
 
-async function getAllPatientBMIReport(){
+async function getAllPatientBMIReport(patientInfo){
     try {
         logger.info("Getting the following Patient Details: ", patientInfo);
         let patientBmiData = await calculateBMI(patientInfo);
