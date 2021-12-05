@@ -81,7 +81,7 @@ The REST API to the node app is described below.
     Connection: keep-alive
     Keep-Alive: timeout=5
 
-    {"data":{"patientBMIData":[{"Gender":"Male","HeightCm":171,"WeightKg":96,"BMI":32.83,"BMI_CATEGORY":"Moderately Obese","HEALTH_RISK":"Medium Risk"},{"Gender":"Female","HeightCm":167,"WeightKg":82,"BMI":29.4,"BMI_CATEGORY":"Overweight","HEALTH_RISK":"Enhanced Risk"}],"overweightCount":1},"success":true}
+    {"data":{"patientBMIData":[{"Gender":"Male","HeightCm":171,"WeightKg":96,"BMI":32.83,"BMI_Category":"Moderately Obese","Health_Risk":"Medium Risk"},{"Gender":"Female","HeightCm":167,"WeightKg":82,"BMI":29.4,"BMI_Category":"Overweight","Health_Risk":"Enhanced Risk"}],"overweightCount":1},"success":true}
 
 ## Calculate patient BMI information 
 
@@ -120,9 +120,9 @@ The REST API to the node app is described below.
     Access-Control-Allow-Origin: *
     Content-Type: application/json; charset=utf-8
     Content-Length: 424
-    ETag: W/"1a8-zFfIsIs4VqmuOp5G6/8pFkjF7Zg"
-    Date: Sun, 05 Dec 2021 07:47:04 GMT
+    ETag: W/"1a8-+RQAjTBKSAocrhTJOwywvlp59iA"
+    Date: Sun, 05 Dec 2021 07:51:06 GMT
     Connection: keep-alive
     Keep-Alive: timeout=5
 
-    {"data":{"patientBMIData":[{"Gender":"Male","HeightCm":171,"WeightKg":96,"BMI":32.83,"BMI_CATEGORY":"Moderately Obese","HEALTH_RISK":"Medium Risk"},{"Gender":"Male","HeightCm":161,"WeightKg":85,"BMI":32.79,"BMI_CATEGORY":"Moderately Obese","HEALTH_RISK":"Medium Risk"},{"Gender":"Female","HeightCm":167,"WeightKg":82,"BMI":29.4,"BMI_CATEGORY":"Overweight","HEALTH_RISK":"Enhanced Risk"}],"overweightCount":1},"success":true}
+    {"data":{"patientBMIData":[{"Gender":"Male","HeightCm":171,"WeightKg":96,"BMI":32.83,"BMI_Category":"Moderately Obese","Health_Risk":"Medium Risk"},{"Gender":"Male","HeightCm":161,"WeightKg":85,"BMI":32.79,"BMI_Category":"Moderately Obese","Health_Risk":"Medium Risk"},{"Gender":"Female","HeightCm":167,"WeightKg":82,"BMI":29.4,"BMI_Category":"Overweight","Health_Risk":"Enhanced Risk"}],"overweightCount":1},"success":true}

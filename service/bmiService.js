@@ -26,8 +26,8 @@ async function calculateBMI(pInfo){
         let bmi = Number((patient.WeightKg / ((patient.HeightCm * patient.HeightCm) / 10000)).toFixed(2));
         let categoryRiskInfo = await calculateBMICategoryHealthRisk(bmi);
         patient['BMI'] = bmi;
-        patient['BMI_CATEGORY'] = categoryRiskInfo.bmi_category;
-        patient['HEALTH_RISK'] = categoryRiskInfo.health_risk;
+        patient['BMI_Category'] = categoryRiskInfo.bmi_category;
+        patient['Health_Risk'] = categoryRiskInfo.health_risk;
         if (categoryRiskInfo.bmi_category == 'Overweight'){
             count++;
         }
