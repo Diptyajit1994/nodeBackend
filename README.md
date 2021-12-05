@@ -41,6 +41,11 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
     $ npm install
 
 
+## Server Port Number
+You can modify the server port number by assigning environment variable with port number. Default port number is 3000.
+
+    DEV_APP_PORT=<PORT NUMBER>
+
 ## Running the  server project Compiles and hot-reloads for development
 
     $ npm run dev
