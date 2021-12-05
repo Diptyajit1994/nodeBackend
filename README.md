@@ -1,4 +1,4 @@
-# nodeBackend
+# Node Backend
 A simple node based server app to calculate patient BMI data and return BMI CATEGORY and HEALTH RISK information
 
 ## Requirements
