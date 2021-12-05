@@ -35,7 +35,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(cookieParser());
 
-app.use(timeout('4s'));
+app.use(timeout('60s'));
 
 // paths
 app.use('/', basicRoute);

@@ -52,3 +52,77 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 ## Run your tests
 
     $ npm run test
+
+# REST API
+
+The REST API to the node app is described below.
+
+## Get list of all patient BMI data
+
+### Request
+
+`GET /api/all-patient-info`
+
+    curl -i -H 'Accept: application/json' http://localhost:3000/api/all-patient-info
+
+### Response
+
+    HTTP/1.1 200 OK
+    X-Powered-By: Express
+    Surrogate-Control: no-store
+    Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
+    Pragma: no-cache
+    Expires: 0
+    Access-Control-Allow-Origin: *
+    Content-Type: application/json; charset=utf-8
+    Content-Length: 778
+    ETag: W/"30a-izP2EkaLbPxzBkXdhQkFVnREXS4"
+    Date: Sun, 05 Dec 2021 07:34:57 GMT
+    Connection: keep-alive
+    Keep-Alive: timeout=5
+
+    {"data":{"patientBMIData":[{"Gender":"Male","HeightCm":171,"WeightKg":96,"BMI":32.83,"BMI_CATEGORY":"Moderately Obese","HEALTH_RISK":"Medium Risk"},{"Gender":"Female","HeightCm":167,"WeightKg":82,"BMI":29.4,"BMI_CATEGORY":"Overweight","HEALTH_RISK":"Enhanced Risk"}],"overweightCount":1},"success":true}
+
+## Calculate patient BMI information 
+
+### Request
+
+`POST /api/calculate-patient_BMI-info`
+
+    curl -i --request POST 'http://localhost:3000/api/calculate-patient_BMI-info' \
+    --header 'Content-Type: application/json' \
+    --data-raw '[
+        {
+            "Gender": "Male",
+            "HeightCm": 171,
+            "WeightKg": 96
+        },
+        {
+            "Gender": "Male",
+            "HeightCm": 161,
+            "WeightKg": 85
+        },
+        {
+            "Gender": "Female",
+            "HeightCm": 167,
+            "WeightKg": 82
+        }
+    ]'
+
+### Response
+
+    HTTP/1.1 200 OK
+    X-Powered-By: Express
+    Surrogate-Control: no-store
+    Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
+    Pragma: no-cache
+    Expires: 0
+    Access-Control-Allow-Origin: *
+    Content-Type: application/json; charset=utf-8
+    Content-Length: 424
+    ETag: W/"1a8-zFfIsIs4VqmuOp5G6/8pFkjF7Zg"
+    Date: Sun, 05 Dec 2021 07:47:04 GMT
+    Connection: keep-alive
+    Keep-Alive: timeout=5
+
+    {"data":{"patientBMIData":[{"Gender":"Male","HeightCm":171,"WeightKg":96,"BMI":32.83,"BMI_CATEGORY":"Moderately Obese","HEALTH_RISK":"Medium Risk"},{"Gender":"Male","HeightCm":161,"WeightKg":85,"BMI":32.79,"BMI_CATEGORY":"Moderately Obese","HEALTH_RISK":"Medium Risk"},{"Gender":"Female","HeightCm":167,"WeightKg":82,"BMI":29.4,"BMI_CATEGORY":"Overweight","HEALTH_RISK":"Enhanced Risk"}],"overweightCount":1},"success":true}
