@@ -41,11 +41,12 @@ router.post('/calculate-patient_BMI-info', async (req, res, next) => {
         "HeightCm": "number",
         "WeightKg": "number"
       }
-      if (req.get('content-Type') != 'application/JSON'){
+      console.log(req.get('content-Type'));
+      if (req.get('content-Type') != 'application/json'){
         throw new Error("Invalid Content type");
       }
       let inputData = req.body;
-      for (let i=0; i<=inputData.length; i++ ){
+      for (let i=0; i<inputData.length; i++ ){
         let info = inputData[i];
         if(typeof(info.Gender) != patientSchema.Gender || typeof(info.HeightCm) != patientSchema.HeightCm || typeof(info.WeightKg) != patientSchema.WeightKg){
           throw new Error("Invalid JSOn file");
@@ -69,7 +70,7 @@ router.post('/calculate-patient_BMI-info', async (req, res, next) => {
         res.status(400);
         res.send({
           success: false,
-          msg: 'Something went wrong'
+          msg: err.message
         });
       }
     }
