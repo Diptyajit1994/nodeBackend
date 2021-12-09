@@ -49,7 +49,7 @@ router.post('/calculate-patient_BMI-info', async (req, res, next) => {
       for (let i=0; i<inputData.length; i++ ){
         let info = inputData[i];
         if(typeof(info.Gender) != patientSchema.Gender || typeof(info.HeightCm) != patientSchema.HeightCm || typeof(info.WeightKg) != patientSchema.WeightKg){
-          throw new Error("Invalid JSOn file");
+          throw new Error("Invalid JSON file");
         }
       }
       let patientData = await bmiService.getAllPatientBMIReport(req.body)
